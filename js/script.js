@@ -11,22 +11,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     navLinks.forEach(function (link) {
 
-        const linkPage =
-            link.getAttribute("href").split("/").pop();
+        const href = link.getAttribute("href");
+
+        if (!href) {
+            return;
+        }
+
+        const linkPage = href.split("/").pop();
 
         if (linkPage === currentPage) {
             link.classList.add("active");
         }
 
-    });
-
-
-    // =========================
-    // PAGE ENTRANCE ANIMATION
-    // =========================
-
-    requestAnimationFrame(function () {
-        document.body.classList.add("page-loaded");
     });
 
 
@@ -40,11 +36,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const target = link.getAttribute("href");
 
-            // Jangan ubah link:
-            // - kosong
-            // - anchor (#)
-            // - external link
-            // - mailto
+            // Biarkan link eksternal, anchor, dan mailto
+            // berjalan seperti biasa.
             if (
                 !target ||
                 target.startsWith("#") ||
@@ -54,35 +47,37 @@ document.addEventListener("DOMContentLoaded", function () {
                 return;
             }
 
+            const targetPage = target.split("/").pop();
 
-            // Jangan melakukan animasi jika
-            // link menuju halaman yang sedang dibuka
-            const targetPage =
-                target.split("/").pop();
-
+            // Jika sedang berada di halaman yang sama,
+            // tidak perlu menjalankan transisi.
             if (targetPage === currentPage) {
                 return;
             }
 
-
-            // Hentikan navigasi default
             event.preventDefault();
 
-
-            // Mulai animasi keluar
-            document.body.classList.remove("page-loaded");
+            // Tampilkan overlay gelap.
+            // Body tidak dibuat opacity: 0,
+            // sehingga tidak muncul layar putih.
             document.body.classList.add("page-leaving");
 
-
-            // Pindah halaman setelah animasi selesai
+            // Pindah halaman setelah overlay muncul.
             setTimeout(function () {
-
                 window.location.href = target;
-
             }, 280);
 
         });
 
     });
 
+});
+
+
+// =========================
+// BROWSER BACK / FORWARD
+// =========================
+
+window.addEventListener("pageshow", function () {
+    document.body.classList.remove("page-leaving");
 });
