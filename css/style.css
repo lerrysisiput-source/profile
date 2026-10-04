@@ -25,10 +25,24 @@ body {
 /* Animasi keluar tetap boleh dipakai oleh JavaScript,
    tetapi halaman tidak disembunyikan saat pertama kali dibuka. */
 body.page-leaving {
-    opacity: 0;
-    transform: translateY(-8px);
-    transition: opacity 0.25s ease, transform 0.25s ease;
     pointer-events: none;
+}
+
+/* Transition overlay: fades in over the current page before navigation. */
+.page-transition {
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.28s ease,
+        visibility 0s linear 0.28s;
+}
+
+body.page-leaving .page-transition {
+    opacity: 1;
+    visibility: visible;
+    transition:
+        opacity 0.28s ease,
+        visibility 0s linear 0s;
 }
 
 
@@ -46,8 +60,40 @@ body.page-leaving {
     transition: opacity 0.35s ease;
 }
 
-body.page-leaving .page-transition {
-    opacity: 1;
+
+
+
+/* =========================
+   PAGE ENTER ANIMATION
+========================= */
+
+.page-content,
+.about-page,
+.contact-page,
+.hero {
+    animation: pageEnter 0.45s ease both;
+}
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .page-content,
+    .about-page,
+    .contact-page,
+    .hero,
+    .page-transition {
+        animation: none !important;
+        transition: none !important;
+    }
 }
 
 
