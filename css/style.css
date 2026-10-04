@@ -22,77 +22,58 @@ body {
     min-height: 100vh;
 }
 
-/* Animasi keluar tetap boleh dipakai oleh JavaScript,
-   tetapi halaman tidak disembunyikan saat pertama kali dibuka. */
-body.page-leaving {
-    pointer-events: none;
-}
-
-/* Transition overlay: fades in over the current page before navigation. */
-.page-transition {
-    opacity: 0;
-    visibility: hidden;
-    transition:
-        opacity 0.28s ease,
-        visibility 0s linear 0.28s;
-}
-
-body.page-leaving .page-transition {
-    opacity: 1;
-    visibility: visible;
-    transition:
-        opacity 0.28s ease,
-        visibility 0s linear 0s;
-}
-
-
 /* =========================
    PAGE TRANSITION
 ========================= */
 
-.page-transition {
+/*
+   Jangan membuat body menjadi opacity: 0.
+   Itu menyebabkan browser sempat menampilkan layar putih
+   ketika berpindah ke halaman berikutnya.
+
+   Sebagai gantinya, gunakan overlay gelap di atas halaman.
+*/
+body::before {
+    content: "";
     position: fixed;
     inset: 0;
-    z-index: 3000;
+    z-index: 9999;
     pointer-events: none;
+
     background: #101322;
     opacity: 0;
-    transition: opacity 0.35s ease;
+
+    transition: opacity 0.28s ease;
+}
+
+body.page-leaving::before {
+    opacity: 1;
 }
 
 
-
-
-/* =========================
-   PAGE ENTER ANIMATION
-========================= */
-
-.page-content,
-.about-page,
-.contact-page,
-.hero {
-    animation: pageEnter 0.45s ease both;
+/* Animasi masuk halaman setelah navigasi selesai */
+main {
+    animation: pageEnter 0.32s ease-out both;
 }
 
 @keyframes pageEnter {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(8px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
+/* Pengguna yang mematikan animasi tidak mendapat efek transisi */
 @media (prefers-reduced-motion: reduce) {
-    .page-content,
-    .about-page,
-    .contact-page,
-    .hero,
-    .page-transition {
-        animation: none !important;
-        transition: none !important;
+    body::before,
+    main {
+        transition: none;
+        animation: none;
     }
 }
 
