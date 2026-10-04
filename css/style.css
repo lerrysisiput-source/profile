@@ -22,10 +22,13 @@ body {
     min-height: 100vh;
 }
 
+/* Animasi keluar tetap boleh dipakai oleh JavaScript,
+   tetapi halaman tidak disembunyikan saat pertama kali dibuka. */
 body.page-leaving {
     pointer-events: none;
 }
 
+/* Transition overlay: fades in over the current page before navigation. */
 .page-transition {
     opacity: 0;
     visibility: hidden;
@@ -197,6 +200,7 @@ body.page-leaving .page-transition {
     font-weight: 700;
     margin-bottom: 15px;
     background: linear-gradient(90deg, #8b7cff, #38bdf8);
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -295,6 +299,7 @@ body.page-leaving .page-transition {
     font-size: 48px;
     margin-bottom: 25px;
     background: linear-gradient(90deg, #8b7cff, #38bdf8);
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -485,6 +490,7 @@ body.page-leaving .page-transition {
         #38bdf8
     );
 
+    -webkit-background-clip: text;
 
     -webkit-text-fill-color: transparent;
 
@@ -697,6 +703,7 @@ body.page-leaving .page-transition {
         #38bdf8
     );
 
+    -webkit-background-clip: text;
 
     -webkit-text-fill-color: transparent;
 
