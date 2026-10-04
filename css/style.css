@@ -20,20 +20,14 @@ body {
         #101322;
     color: #ffffff;
     min-height: 100vh;
-
-    opacity: 0;
-    transform: translateY(8px);
-    transition: opacity 0.35s ease, transform 0.35s ease;
 }
 
-body.page-loaded {
-    opacity: 1;
-    transform: translateY(0);
-}
-
+/* Animasi keluar tetap boleh dipakai oleh JavaScript,
+   tetapi halaman tidak disembunyikan saat pertama kali dibuka. */
 body.page-leaving {
     opacity: 0;
     transform: translateY(-8px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
 
@@ -980,12 +974,88 @@ body.page-leaving .page-transition {
 
 @media (max-width: 768px) {
 
+    .navbar {
+        padding: 17px 12px;
+    }
+
     .navbar nav {
-        gap: 20px;
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
     }
 
     .navbar nav a {
-        font-size: 14px;
+        font-size: 13px;
+        padding: 7px 3px;
+    }
+
+    .navbar nav a.active::after {
+        bottom: -5px;
+        height: 2px;
+    }
+
+    .page-content {
+        min-height: 100vh;
+        padding: 115px 15px 50px;
+    }
+
+    .page-content h1 {
+        font-size: 38px;
+        margin-bottom: 22px;
+    }
+
+    .project {
+        width: 100%;
+        max-width: 520px;
+        padding: 22px 18px;
+        margin: 10px 0;
+        border-radius: 14px;
+    }
+
+    .project h2 {
+        font-size: 22px;
+        margin-bottom: 18px;
+    }
+
+    .project-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+    }
+
+    .project-image {
+        width: 100%;
+    }
+
+    .project-image img {
+        display: block;
+        width: 100%;
+        height: auto;
+        max-height: 230px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .project-info {
+        width: 100%;
+    }
+
+    .project-info p {
+        font-size: 15px;
+        line-height: 1.7;
+        margin-bottom: 12px;
+    }
+
+    .github-button {
+        width: 100%;
+        justify-content: center;
+        padding: 11px 14px;
+    }
+
+    /* Tidak ada efek hover yang mengganggu pada perangkat touch. */
+    .project:hover,
+    .github-button:hover {
+        transform: none;
     }
 
     .hero {
@@ -1041,8 +1111,33 @@ body.page-leaving .page-transition {
         flex-direction: column;
         align-items: center;
     }
+}
+
+/* HP yang sangat kecil */
+@media (max-width: 380px) {
+
+    .navbar nav {
+        gap: 4px;
+    }
+
+    .navbar nav a {
+        font-size: 12px;
+    }
+
+    .page-content {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .page-content h1 {
+        font-size: 34px;
+    }
 
     .project {
-        width: 100%;
+        padding: 20px 15px;
+    }
+
+    .project h2 {
+        font-size: 20px;
     }
 }
