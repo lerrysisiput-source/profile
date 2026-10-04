@@ -28,6 +28,7 @@ body.page-leaving {
     opacity: 0;
     transform: translateY(-8px);
     transition: opacity 0.25s ease, transform 0.25s ease;
+    pointer-events: none;
 }
 
 
@@ -974,6 +975,7 @@ body.page-leaving .page-transition {
 
 @media (max-width: 768px) {
 
+    /* Navigation */
     .navbar {
         padding: 17px 12px;
     }
@@ -992,6 +994,102 @@ body.page-leaving .page-transition {
     .navbar nav a.active::after {
         bottom: -5px;
         height: 2px;
+    }
+
+    /* ABOUT */
+    .about-page {
+        width: 100%;
+        min-height: 100vh;
+        padding: 115px 15px 50px;
+    }
+
+    .about-page > h1 {
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    .about-container {
+        width: 100%;
+        max-width: 520px;
+        min-height: auto;
+        padding: 25px 20px;
+        border-radius: 16px;
+    }
+
+    .about-description {
+        width: 100%;
+        max-width: none;
+    }
+
+    .about-description h2 {
+        font-size: 24px;
+        margin-bottom: 18px;
+    }
+
+    .about-description p {
+        font-size: 15px;
+        line-height: 1.75;
+        margin-bottom: 15px;
+    }
+
+    /* Cards menjadi satu kolom di HP */
+    .about-cards {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-top: 30px;
+    }
+
+    .about-card {
+        width: 100%;
+        min-height: auto;
+        padding: 20px;
+        border-radius: 13px;
+    }
+
+    .about-card h3 {
+        font-size: 19px;
+        margin-bottom: 12px;
+    }
+
+    .about-card p {
+        font-size: 15px;
+        margin-bottom: 6px;
+    }
+
+    .about-card span {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    /* Hover tidak menggeser card pada touchscreen */
+    .about-card:hover {
+        transform: none;
+    }
+
+    /* Other existing pages */
+    .contact-page {
+        padding-top: 120px;
+    }
+
+    .contact-page h1 {
+        font-size: 42px;
+    }
+
+    .contact-intro {
+        font-size: 15px;
+    }
+
+    .contact-social {
+        grid-template-columns: 1fr;
+    }
+
+    .social-card {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding: 17px 20px;
     }
 
     .page-content {
@@ -1052,7 +1150,6 @@ body.page-leaving .page-transition {
         padding: 11px 14px;
     }
 
-    /* Tidak ada efek hover yang mengganggu pada perangkat touch. */
     .project:hover,
     .github-button:hover {
         transform: none;
@@ -1122,6 +1219,35 @@ body.page-leaving .page-transition {
 
     .navbar nav a {
         font-size: 12px;
+    }
+
+    .about-page {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .about-page > h1 {
+        font-size: 34px;
+    }
+
+    .about-container {
+        padding: 22px 15px;
+    }
+
+    .about-description h2 {
+        font-size: 22px;
+    }
+
+    .about-description p {
+        font-size: 14px;
+    }
+
+    .about-card {
+        padding: 18px;
+    }
+
+    .about-card h3 {
+        font-size: 18px;
     }
 
     .page-content {
