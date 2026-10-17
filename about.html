@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>About Me - Andre Maulana</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="project.html">Project</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <!-- About Me -->
+        <section class="about-page">
+
+            <h1>About Me</h1>
+
+
+            <!-- Container utama -->
+            <div class="about-container">
+
+
+                <!-- Deskripsi -->
+                <div class="about-description">
+
+                    <h2>The Beginning</h2>
+
+                    <p>
+                        Saya adalah mahasiswa Teknik Informatika di Universitas Gunadarma yang memiliki ketertarikan untuk berkembang di bidang pengembangan game. 
+                        Saya memiliki ketertarikan terhadap pemrograman dan ingin mengetahui bagaimana 
+                        kode dapat diubah menjadi pengalaman interaktif yang dapat dinikmati oleh orang lain.
+                    </p>
+
+                    <p>
+                        Saya masih berada di tahap awal, tetapi saya ingin terus belajar, bereksperimen, dan membuat berbagai hal baru. 
+                        Tujuan saya adalah berkembang menjadi seorang Game Developer yang 
+                        mampu menciptakan game yang menyenangkan, bermakna, dan berkesan bagi para pemain.
+                    </p>
+
+                </div>
+
+
+                <!-- Informasi -->
+                <div class="about-cards">
+
+
+                    <!-- Education -->
+                    <div class="about-card">
+
+                        <h3>Education</h3>
+
+                        <p>
+                            Teknik Informatika
+                        </p>
+
+                        <span>
+                            Universitas Gunadarma
+                        </span>
+
+                    </div>
+
+
+                    <!-- Skills -->
+                    <div class="about-card">
+
+                        <h3>Skills</h3>
+
+                        <p>
+                            Programming
+                        </p>
+
+                        <span>
+                            Python, MySQL, C++ (Still Learning)
+                        </span>
+
+                    </div>
+
+
+                    <!-- Interest -->
+                    <div class="about-card">
+
+                        <h3>Interest</h3>
+
+                        <p>
+                            Game Development
+                        </p>
+
+                        <span>
+                            Technology & Programming
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="js/script.js"></script>
+
+
+    <!-- Floating Message Widget -->
+    <div class="message-widget" id="messageWidget">
+        <section class="message-panel" id="messagePanel" aria-labelledby="messagePanelTitle" hidden>
+            <div class="message-panel-header">
+                <div>
+                    <p class="message-eyebrow">LET'S TALK</p>
+                    <h2 id="messagePanelTitle">Kirim Pesan</h2>
+                </div>
+                <button class="message-close" id="messageClose" type="button" aria-label="Tutup formulir">&times;</button>
+            </div>
+            <p class="message-description">Ada pertanyaan atau ingin berdiskusi? Kirim pesan melalui formulir ini.</p>
+            <form id="messageForm">
+                <label for="messageName">Nama</label>
+                <input id="messageName" name="name" type="text" placeholder="Nama kamu" required maxlength="100">
+
+                <label for="messageEmail">Email</label>
+                <input id="messageEmail" name="email" type="email" placeholder="nama@email.com" required maxlength="150">
+
+                <label for="messageText">Pesan</label>
+                <textarea id="messageText" name="message" rows="4" placeholder="Tulis pesan kamu..." required maxlength="3000"></textarea>
+
+                <button class="message-submit" type="submit">Kirim Pesan <span aria-hidden="true">→</span></button>
+                <p class="message-note">Tombol kirim akan membuka aplikasi email kamu untuk mengirim pesan.</p>
+            </form>
+        </section>
+        <button class="message-toggle" id="messageToggle" type="button"
+                aria-expanded="false" aria-controls="messagePanel" aria-label="Buka formulir pesan">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Zm-2 11H6v-2h12v2Zm0-4H6V7h12v2Z"/>
+            </svg>
+            <span>Message</span>
+        </button>
+    </div>
+
+    <script src="js/message-widget.js"></script>
+</body>
+
+</html>
