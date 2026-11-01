@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Proyek - Andre Maulana</title>
+    <title>Projects - Andre Maulana</title>
 
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -14,26 +14,26 @@
 
     <header class="navbar">
         <nav>
-            <a href="index.html">Beranda</a>
-            <a href="about.html">Tentang Saya</a>
-            <a href="project.html">Proyek</a>
-            <a href="contact.html">Kontak</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="project.html">Projects</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
     <main>
         <section class="page-content">
 
-            <h1>Proyek Saya</h1>
+            <h1>My Projects</h1>
 
             <div class="project-table-wrapper">
                 <table class="project-table">
                     <thead>
                         <tr>
-                            <th>No</th>
-                            <th>Proyek</th>
-                            <th>Teknologi yang Digunakan</th>
-                            <th>Tautan</th>
+                            <th>No.</th>
+                            <th>Project</th>
+                            <th>Built With</th>
+                            <th>Link</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -41,14 +41,14 @@
                             <td>1</td>
                             <td>
                                 <div class="project-title">
-                                    <img src="asset/profil.png" alt="Portofolio Web" class="project-thumbnail">
-                                    <span>Portofolio Web</span>
+                                    <img src="asset/profil.png" alt="Web Portfolio" class="project-thumbnail">
+                                    <span>Web Portfolio</span>
                                 </div>
                             </td>
                             <td>HTML, CSS, JavaScript</td>
                             <td>
                                 <a class="github-link" href="https://github.com/lerrysisiput-source/profile" target="_blank"
-                                   rel="noopener noreferrer" aria-label="Buka GitHub">
+                                   rel="noopener noreferrer" aria-label="Open GitHub">
                                     <img src="asset/GitHub.png" alt="GitHub" class="github-link-icon">
                                 </a>
                             </td>
@@ -57,15 +57,15 @@
                             <td>2</td>
                             <td>
                                 <div class="project-title">
-                                    <img src="asset/pacman.webp" alt="Permainan Pacman" class="project-thumbnail">
-                                    <span>Permainan Pacman</span>
+                                    <img src="asset/pacman.webp" alt="Pacman Game" class="project-thumbnail">
+                                    <span>Pacman Game</span>
                                 </div>
                             </td>
                             <td>Python, Pygame</td>
                             <td>
                                 <a class="github-link"
                                    href="https://github.com/lerrysisiput-source/pacman-py"
-                                   target="_blank" rel="noopener noreferrer" aria-label="Buka repositori Permainan Pacman di GitHub">
+                                   target="_blank" rel="noopener noreferrer" aria-label="Open the Pacman Game repository on GitHub">
                                     <img src="asset/GitHub.png" alt="GitHub" class="github-link-icon">
                                 </a>
                             </td>
@@ -79,37 +79,37 @@
     <script src="js/script.js"></script>
 
 
-    <!-- Fitur Pesan Mengambang -->
+    <!-- Floating Message Widget -->
     <div class="message-widget" id="messageWidget">
         <section class="message-panel" id="messagePanel" aria-labelledby="messagePanelTitle" hidden>
             <div class="message-panel-header">
                 <div>
-                    <p class="message-eyebrow">MARI BERBICARA</p>
-                    <h2 id="messagePanelTitle">Kirim Pesan</h2>
+                    <p class="message-eyebrow">LET'S TALK</p>
+                    <h2 id="messagePanelTitle">Send a Message</h2>
                 </div>
-                <button class="message-close" id="messageClose" type="button" aria-label="Tutup formulir">&times;</button>
+                <button class="message-close" id="messageClose" type="button" aria-label="Close form">&times;</button>
             </div>
-            <p class="message-description">Ada pertanyaan atau ingin berdiskusi? Kirim pesan melalui formulir ini.</p>
+            <p class="message-description">Have a question or want to discuss something? Send me a message using this form.</p>
             <form id="messageForm">
-                <label for="messageName">Nama</label>
-                <input id="messageName" name="name" type="text" placeholder="Nama kamu" required maxlength="100">
+                <label for="messageName">Name</label>
+                <input id="messageName" name="name" type="text" placeholder="Your name" required maxlength="100">
 
                 <label for="messageEmail">Email</label>
-                <input id="messageEmail" name="email" type="email" placeholder="nama@email.com" required maxlength="150">
+                <input id="messageEmail" name="email" type="email" placeholder="name@email.com" required maxlength="150">
 
-                <label for="messageText">Pesan</label>
-                <textarea id="messageText" name="message" rows="4" placeholder="Tulis pesan kamu..." required maxlength="3000"></textarea>
+                <label for="messageText">Message</label>
+                <textarea id="messageText" name="message" rows="4" placeholder="Write your message..." required maxlength="3000"></textarea>
 
-                <button class="message-submit" type="submit">Kirim Pesan <span aria-hidden="true">→</span></button>
-                <p class="message-note">Tombol kirim akan membuka aplikasi email kamu untuk mengirim pesan.</p>
+                <button class="message-submit" type="submit">Send Message <span aria-hidden="true">→</span></button>
+                <p class="message-note">The send button will open your email application to send the message.</p>
             </form>
         </section>
         <button class="message-toggle" id="messageToggle" type="button"
-                aria-expanded="false" aria-controls="messagePanel" aria-label="Buka formulir pesan">
+                aria-expanded="false" aria-controls="messagePanel" aria-label="Open message form">
             <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Zm-2 11H6v-2h12v2Zm0-4H6V7h12v2Z"/>
             </svg>
-            <span>Pesan</span>
+            <span>Message</span>
         </button>
     </div>
 
