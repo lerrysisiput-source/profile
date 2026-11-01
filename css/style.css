@@ -26,13 +26,6 @@ body {
    PAGE TRANSITION
 ========================= */
 
-/*
-   Jangan membuat body menjadi opacity: 0.
-   Itu menyebabkan browser sempat menampilkan layar putih
-   ketika berpindah ke halaman berikutnya.
-
-   Sebagai gantinya, gunakan overlay gelap di atas halaman.
-*/
 body::before {
     content: "";
     position: fixed;
