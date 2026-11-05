@@ -9,7 +9,13 @@
     const setOpen = (open) => {
         panel.hidden = !open;
         toggle.setAttribute("aria-expanded", String(open));
-        toggle.setAttribute("aria-label", open ? "Tutup formulir pesan" : "Buka formulir pesan");
+        const isIndonesian = document.documentElement.lang === "id";
+        toggle.setAttribute(
+            "aria-label",
+            open
+                ? (isIndonesian ? "Tutup formulir pesan" : "Close message form")
+                : (isIndonesian ? "Buka formulir pesan" : "Open message form")
+        );
         if (open) {
             const firstInput = document.getElementById("messageName");
             if (firstInput) firstInput.focus();

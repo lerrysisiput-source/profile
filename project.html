@@ -14,26 +14,30 @@
 
     <header class="navbar">
         <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About Me</a>
-            <a href="project.html">Projects</a>
-            <a href="contact.html">Contact</a>
+            <a href="index.html#home" data-i18n="nav_home">Home</a>
+            <a href="index.html#about" data-i18n="nav_about">About Me</a>
+            <a href="index.html#projects" data-i18n="nav_projects">Projects</a>
+            <a href="index.html#contact" data-i18n="nav_contact">Contact</a>
+            <select class="language-selector" id="languageSelector" aria-label="Select language" data-i18n-aria-label="language_label">
+                <option value="en">English</option>
+                <option value="id">Bahasa Indonesia</option>
+            </select>
         </nav>
     </header>
 
     <main>
         <section class="page-content">
 
-            <h1>My Projects</h1>
+            <h1 data-i18n="projects_title">My Projects</h1>
 
             <div class="project-table-wrapper">
                 <table class="project-table">
                     <thead>
                         <tr>
-                            <th>No.</th>
-                            <th>Project</th>
-                            <th>Built With</th>
-                            <th>Link</th>
+                            <th data-i18n="projects_number">No.</th>
+                            <th data-i18n="projects_project">Project</th>
+                            <th data-i18n="projects_built_with">Built With</th>
+                            <th data-i18n="projects_link">Link</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -84,32 +88,32 @@
         <section class="message-panel" id="messagePanel" aria-labelledby="messagePanelTitle" hidden>
             <div class="message-panel-header">
                 <div>
-                    <p class="message-eyebrow">LET'S TALK</p>
-                    <h2 id="messagePanelTitle">Send a Message</h2>
+                    <p class="message-eyebrow" data-i18n="widget_eyebrow">LET'S TALK</p>
+                    <h2 id="messagePanelTitle" data-i18n="widget_title">Send a Message</h2>
                 </div>
-                <button class="message-close" id="messageClose" type="button" aria-label="Close form">&times;</button>
+                <button class="message-close" id="messageClose" type="button" aria-label="Close form" data-i18n-aria-label="widget_close">&times;</button>
             </div>
-            <p class="message-description">Have a question or want to discuss something? Send me a message using this form.</p>
+            <p class="message-description" data-i18n="widget_description">Have a question or want to discuss something? Send me a message using this form.</p>
             <form id="messageForm">
-                <label for="messageName">Name</label>
-                <input id="messageName" name="name" type="text" placeholder="Your name" required maxlength="100">
+                <label for="messageName" data-i18n="widget_name">Name</label>
+                <input id="messageName" name="name" type="text" placeholder="Your name" data-i18n-placeholder="widget_name_placeholder" required maxlength="100">
 
-                <label for="messageEmail">Email</label>
-                <input id="messageEmail" name="email" type="email" placeholder="name@email.com" required maxlength="150">
+                <label for="messageEmail" data-i18n="widget_email">Email</label>
+                <input id="messageEmail" name="email" type="email" placeholder="name@email.com" data-i18n-placeholder="widget_email_placeholder" required maxlength="150">
 
-                <label for="messageText">Message</label>
-                <textarea id="messageText" name="message" rows="4" placeholder="Write your message..." required maxlength="3000"></textarea>
+                <label for="messageText" data-i18n="widget_message">Message</label>
+                <textarea id="messageText" name="message" rows="4" placeholder="Write your message..." data-i18n-placeholder="widget_message_placeholder" required maxlength="3000"></textarea>
 
-                <button class="message-submit" type="submit">Send Message <span aria-hidden="true">→</span></button>
-                <p class="message-note">The send button will open your email application to send the message.</p>
+                <button class="message-submit" type="submit"><span data-i18n="widget_send">Send Message</span> <span aria-hidden="true">→</span></button>
+                <p class="message-note" data-i18n="widget_note">The send button will open your email application to send the message.</p>
             </form>
         </section>
         <button class="message-toggle" id="messageToggle" type="button"
-                aria-expanded="false" aria-controls="messagePanel" aria-label="Open message form">
+                aria-expanded="false" aria-controls="messagePanel" aria-label="Open message form" data-i18n-aria-label="widget_open">
             <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Zm-2 11H6v-2h12v2Zm0-4H6V7h12v2Z"/>
             </svg>
-            <span>Message</span>
+            <span data-i18n="widget_toggle">Message</span>
         </button>
     </div>
 

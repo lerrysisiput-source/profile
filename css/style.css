@@ -126,6 +126,45 @@ main {
     box-shadow: 0 0 12px rgba(124, 92, 255, 0.55);
 }
 
+.language-selector {
+    min-height: 40px;
+    max-width: 190px;
+    padding: 8px 34px 8px 36px;
+    border: 1px solid rgba(139, 124, 255, 0.32);
+    border-radius: 12px;
+    appearance: none;
+    -webkit-appearance: none;
+    background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a9adbd' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m7 10 5 5 5-5'/%3E%3C/svg%3E") no-repeat right 10px center / 15px,
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238b7cff' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='9'/%3E%3Cpath d='M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18'/%3E%3C/svg%3E") no-repeat 12px center / 16px,
+        linear-gradient(135deg, rgba(139, 124, 255, 0.12), rgba(56, 189, 248, 0.07)),
+        rgba(16, 19, 34, 0.8);
+    color: #ffffff;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.language-selector:hover {
+    border-color: rgba(139, 124, 255, 0.72);
+    box-shadow: 0 0 18px rgba(124, 92, 255, 0.18);
+}
+
+.language-selector:focus-visible {
+    outline: 2px solid #38bdf8;
+    outline-offset: 3px;
+    border-color: rgba(56, 189, 248, 0.8);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.18);
+}
+
+.language-selector option {
+    background: #101322;
+    color: #ffffff;
+}
+
 
 /* =========================
    HOME
@@ -284,6 +323,45 @@ main {
     line-height: 1.8;
 }
 
+.portfolio-page #home,
+.portfolio-page #about,
+.portfolio-page #projects,
+.portfolio-page #contact,
+.portfolio-page #personal-space {
+    scroll-margin-top: 84px;
+}
+
+.portfolio-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: min(840px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 18px 0;
+}
+
+.portfolio-divider::before,
+.portfolio-divider::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(139, 124, 255, 0.38), rgba(56, 189, 248, 0.32));
+}
+
+.portfolio-divider::after {
+    transform: rotate(180deg);
+}
+
+.portfolio-divider span {
+    width: 9px;
+    height: 9px;
+    flex: 0 0 9px;
+    border: 1px solid rgba(139, 124, 255, 0.7);
+    border-radius: 3px;
+    background: linear-gradient(135deg, #8b7cff, #38bdf8);
+    box-shadow: 0 0 16px rgba(124, 92, 255, 0.42);
+    transform: rotate(45deg);
+}
 
 /* =========================
    PROJECT TABLE
@@ -1017,6 +1095,17 @@ main {
         padding: 7px 3px;
     }
 
+    .language-selector {
+        width: clamp(72px, 22vw, 104px);
+        min-height: 36px;
+        padding: 7px 23px 7px 30px;
+        background-position: right 6px center, 8px center, center;
+        background-size: 13px, 15px, auto;
+        font-size: 12px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
     .navbar nav a.active::after {
         bottom: -5px;
         height: 2px;
@@ -1481,15 +1570,12 @@ main {
     scroll-margin-top: 90px;
 }
 
-/* Subtle horizontal separator before My Personal Space */
-.personal-space::before {
-    content: "";
-    display: block;
-    width: min(760px, calc(100vw - 48px));
-    height: 1px;
-    margin: 0 auto 58px;
-    background: linear-gradient(90deg, transparent, rgba(139, 124, 255, 0.48), rgba(56, 189, 248, 0.42), transparent);
+#about,
+#projects,
+#contact {
+    scroll-margin-top: 84px;
 }
+
 .personal-space-heading {
     max-width: 720px;
     margin: 0 auto 36px;
@@ -1663,6 +1749,11 @@ main {
     .spotify-embed-wrap iframe { min-height: 300px; }
 }
 @media (max-width: 600px) {
+    .portfolio-divider {
+        width: calc(100% - 36px);
+        padding: 12px 0;
+    }
+
     .personal-space { width: calc(100% - 30px); padding: 48px 0 76px; }
     .personal-space-heading { margin-bottom: 25px; }
     .personal-space-heading > p:last-child { font-size: 14px; }
